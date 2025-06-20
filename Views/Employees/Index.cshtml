@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<EmployeesManagement.Models.Employee>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Employees List";
 }
 
 <h1>Employees List</h1>
@@ -20,11 +20,11 @@
             <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
             <th>@Html.DisplayNameFor(model => model.EmailAddress)</th>
             <th>@Html.DisplayNameFor(model => model.Country)</th>
-            <th>@Html.DisplayNameFor(model => model.DateOfBirth)
+            <th>@Html.DisplayNameFor(model => model.DateOfBirth)</th>
             <th>Actions</th>
-
         </tr>
     </thead>
+
     <tbody>
         @foreach (var item in Model)
         {
@@ -38,9 +38,9 @@
                 <td>@Html.DisplayFor(modelItem => item.Country)</td>
                 <td>@Html.DisplayFor(modelItem => item.DateOfBirth)</td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
         }
